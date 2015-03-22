@@ -1,5 +1,6 @@
+<input type="text" ng-model="search.name">
 <ul>
-    <li ng-repeat="book in books | orderBy : 'price'">
+    <li ng-repeat="book in books | orderBy : 'price' | filter : {name:search.name}">
         {{$index+1}} {{book.name}}{{(book.price==0)? " แจกฟรี " : " ราคา "+ book.price}}
     </li>
 </ul>
