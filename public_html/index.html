@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html ng-app="app">
+    <head>
+        <title>Training AnguraJs</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/app.css" rel="stylesheet" type="text/css"/>
+        <script src="js/libs/angular-1.3.15/angular.js" type="text/javascript"></script>
+        <script src="js/libs/angular-1.3.15/angular-resource.js" type="text/javascript"></script>
+        <script src="js/libs/angular-1.3.15/angular-route.js" type="text/javascript"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controller.js"></script>
+    </head>
+    <body>
+        <div ng-controller="myControler">
+            <!--<p>Hello : {{name}}</p>-->
+            <ng-form  name="personForm">
+                <p>name : <input type="input" required ng-model="person.name"></p>
+                <p>age : <input type="input" required ng-model="person.age"></p>
+                <p>email: <input type="email" required ng-model="person.email"></p>
+                <p><input type="button" ng-disabled="!personForm.$valid" ng-click="btnName()" ng-show="person" value="Click Me."></p>
+                <div>{{person|json}}</div>
+            </ng-form>
+        </div>
+
+        <div ng-view></div>
+
+</body>
+</html>
